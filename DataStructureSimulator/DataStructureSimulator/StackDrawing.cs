@@ -24,8 +24,9 @@ namespace DataStructureSimulator
 			// when drawing the image of the stack itself.
 			while (!inputs.isEmpty())
 			{
-				StackEntryDrawing currEntry = new StackEntryDrawing(width, height, x, y, inputs.pop());
-				this.stackEntries.push(currEntry);
+				StackEntryDrawing currEntry = new StackEntryDrawing(width, height, x, y, inputs.First.Value);
+				inputs.RemoveFirst();
+				this.stackEntries.AddFirst(currEntry);
 				y += height;
 			}
 
@@ -38,7 +39,7 @@ namespace DataStructureSimulator
 		public void add(int input)
 		{
 			StackEntryDrawing inputStackEntry = new StackEntryDrawing(width, height, x, y, input);
-			this.stackEntries.AddFirst(inputStackEntry);
+			this.stackEntries.push(inputStackEntry);
 		}
 
 		// Draws the stack represented by this StackDrawing onto g
