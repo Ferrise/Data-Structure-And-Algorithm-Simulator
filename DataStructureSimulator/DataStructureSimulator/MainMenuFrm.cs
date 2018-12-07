@@ -22,5 +22,13 @@ namespace DataStructureSimulator
 		{
 			Close();
 		}
+
+		// Opens the configuration form and hides this form
+		private void startBtn_Click(object sender, EventArgs e)
+		{
+			ConfigurationFrm configurationForm = new ConfigurationFrm();
+			configurationForm.Show();
+			this.Hide();
+		}
 	}
 }

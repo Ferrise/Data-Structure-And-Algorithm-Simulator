@@ -1,6 +1,6 @@
 ﻿namespace DataStructureSimulator
 {
-	partial class configurationFrm
+	partial class ConfigurationFrm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -28,7 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(configurationFrm));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigurationFrm));
 			this.simulateBtn = new System.Windows.Forms.Button();
 			this.backBtn = new System.Windows.Forms.Button();
 			this.dataStructLbl = new System.Windows.Forms.Label();
@@ -65,6 +65,7 @@
 			this.backBtn.TabIndex = 2;
 			this.backBtn.Text = "Back";
 			this.backBtn.UseVisualStyleBackColor = true;
+			this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
 			// 
 			// dataStructLbl
 			// 
@@ -165,7 +166,7 @@
 			this.inputTxtBox.Size = new System.Drawing.Size(120, 20);
 			this.inputTxtBox.TabIndex = 10;
 			// 
-			// configurationFrm
+			// ConfigurationFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -181,7 +182,7 @@
 			this.Controls.Add(this.backBtn);
 			this.Controls.Add(this.simulateBtn);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "configurationFrm";
+			this.Name = "ConfigurationFrm";
 			this.Text = "Data Structure Configuration";
 			this.inputGrpBox.ResumeLayout(false);
 			this.inputGrpBox.PerformLayout();

@@ -45,6 +45,7 @@
 			this.startBtn.TabIndex = 0;
 			this.startBtn.Text = "Start";
 			this.startBtn.UseVisualStyleBackColor = true;
+			this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
 			// 
 			// titleLbl
 			// 

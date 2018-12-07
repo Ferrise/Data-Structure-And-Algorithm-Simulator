@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace DataStructureSimulator
 {
-	public partial class configurationFrm : Form
+	public partial class ConfigurationFrm : Form
 	{
-		public configurationFrm()
+		public ConfigurationFrm()
 		{
 			InitializeComponent();
+		}
+
+		// Returns to main menu form and hides this form
+		private void backBtn_Click(object sender, EventArgs e)
+		{
+			MainMenuFrm mainMenuForm = new MainMenuFrm();
+			mainMenuForm.Show();
+			this.Hide();
 		}
 	}
 }
