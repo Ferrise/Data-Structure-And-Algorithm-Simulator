@@ -36,7 +36,7 @@ namespace DataStructureSimulator
 		private void simulateBtn_Click(object sender, EventArgs e)
 		{
 			int dataStructure = dataStructCmbBox.SelectedIndex;
-			Stack inputs = new Stack();
+			LinkedStack<int> inputs = new LinkedStack<int>();
 
 			// Handles the case where the user did not enter the input text box
 			if (!hasBeenEntered)
@@ -52,7 +52,7 @@ namespace DataStructureSimulator
 				// Handles the case where one the numbers entred is too small or large
 				try
 				{
-					inputs.Push(Int32.Parse(entry));
+					inputs.push(Int32.Parse(entry));
 				}
 				catch (OverflowException ex)
 				{

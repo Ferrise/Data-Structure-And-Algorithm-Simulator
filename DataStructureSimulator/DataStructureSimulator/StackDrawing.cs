@@ -17,8 +17,9 @@ namespace DataStructureSimulator
 
 		public StackDrawing(int x, int startY, int width, int height, LinkedStack<int> inputs)
 		{
-			this.y = startY;
-			
+			this.y = startY - height;
+			this.stackEntries = new LinkedStack<StackEntryDrawing>();
+
 			// Populate stackEntries. The first entry is the last element of inputs.
 			// This is because the stack is drawn from the base -- as a result, we must reverse the order of inputs
 			// when drawing the image of the stack itself.
@@ -27,7 +28,7 @@ namespace DataStructureSimulator
 				StackEntryDrawing currEntry = new StackEntryDrawing(width, height, x, y, inputs.First.Value);
 				inputs.RemoveFirst();
 				this.stackEntries.AddFirst(currEntry);
-				y += height;
+				y -= height;
 			}
 
 			this.x = x;
@@ -47,7 +48,7 @@ namespace DataStructureSimulator
 		{
 			while (stackEntries.Count > 0)
 			{
-				stackEntries.pop().draw(g, pen);
+				this.stackEntries.pop().draw(g, pen);
 			}
 		}
 	}

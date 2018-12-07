@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DataStructureSimulator
 {
@@ -27,7 +28,9 @@ namespace DataStructureSimulator
 		// Draws this stack entry onto g
 		public void draw(Graphics g, Pen pen)
 		{
-			g.DrawRectangle(pen, new Rectangle(this.width, this.height, this.x, this.y)); 
+			g.DrawRectangle(pen, new Rectangle(this.x, this.y, this.width, this.height));
+			g.DrawString(String.Format("{0}", data), new Font("arial", 8), new SolidBrush(Color.Red), 
+				(this.x + this.width) - (this.width/2), (this.y + this.height / 2));
 		}
 	}
 }

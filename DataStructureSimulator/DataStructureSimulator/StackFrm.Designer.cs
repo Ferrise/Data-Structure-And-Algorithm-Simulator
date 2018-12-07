@@ -51,6 +51,7 @@
 			this.stackSimPicBox.Size = new System.Drawing.Size(590, 367);
 			this.stackSimPicBox.TabIndex = 0;
 			this.stackSimPicBox.TabStop = false;
+			this.stackSimPicBox.Paint += new System.Windows.Forms.PaintEventHandler(this.stackSimPicBox_Paint);
 			// 
 			// pushBtn
 			// 
@@ -139,6 +140,7 @@
 			// 
 			// exitBtn
 			// 
+			this.exitBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
 			this.exitBtn.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.exitBtn.Location = new System.Drawing.Point(499, 460);
@@ -153,6 +155,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.CancelButton = this.exitBtn;
 			this.ClientSize = new System.Drawing.Size(723, 518);
 			this.Controls.Add(this.exitBtn);
 			this.Controls.Add(this.mainMenuBtn);
@@ -168,7 +171,6 @@
 			this.Name = "StackFrm";
 			this.Text = "Stack Simulator";
 			this.Load += new System.EventHandler(this.StackFrm_Load);
-			this.Paint += new System.Windows.Forms.PaintEventHandler(this.StackFrm_Paint);
 			((System.ComponentModel.ISupportInitialize)(this.stackSimPicBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

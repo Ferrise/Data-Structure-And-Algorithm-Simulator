@@ -14,25 +14,28 @@ namespace DataStructureSimulator
 {
 	public partial class StackFrm : Form
 	{
-		private Stack inputs;
+		private LinkedStack<int> inputs;
 		private LinkedStack<int> stack;
+		private StackDrawing stackImage;
 
-		public StackFrm(Stack inputs)
+		public StackFrm(LinkedStack<int> inputs)
 		{
 			InitializeComponent();
 			this.inputs = inputs;
 			this.stack = new LinkedStack<int>();
+			this.stackImage = new StackDrawing(stackSimPicBox.Width / 2, stackSimPicBox.Height, 50, 50, this.inputs);
 		}
 
 		private void StackFrm_Load(object sender, EventArgs e)
 		{
-
 		}
 
-		private void StackFrm_Paint(object sender, PaintEventArgs e)
+		private void stackSimPicBox_Paint(object sender, PaintEventArgs e)
 		{
 			Graphics g = e.Graphics;
-            
+			g.Clear(Color.White);
+			Pen pen = new Pen(Color.Red, 5);
+			this.stackImage.draw(g, pen);
 		}
 	}
 }
