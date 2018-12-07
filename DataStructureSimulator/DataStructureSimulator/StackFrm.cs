@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -12,9 +11,19 @@ namespace DataStructureSimulator
 {
 	public partial class StackFrm : Form
 	{
-		public StackFrm()
+		private LinkedStack<int> inputs;
+		private LinkedStack<int> stack;
+
+		public StackFrm(LinkedStack<int> inputs)
 		{
 			InitializeComponent();
+			this.inputs = inputs;
+			this.stack = new LinkedStack<int>();
+		}
+
+		private void StackFrm_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

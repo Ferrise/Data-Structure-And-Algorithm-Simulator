@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class Stack<E> : LinkedList<E>
+public class LinkedStack<E> : LinkedList<E>
 {
 	// Constructs a stack using a doubly LinkedList
-	public Stack() : base()
+	public LinkedStack() : base()
 	{
 	}
 

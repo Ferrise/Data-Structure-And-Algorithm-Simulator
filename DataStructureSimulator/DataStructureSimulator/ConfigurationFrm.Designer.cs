@@ -33,15 +33,10 @@
 			this.backBtn = new System.Windows.Forms.Button();
 			this.dataStructLbl = new System.Windows.Forms.Label();
 			this.dataStructCmbBox = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.inputGrpBox = new System.Windows.Forms.GroupBox();
-			this.strRadBtn = new System.Windows.Forms.RadioButton();
-			this.numRadBtn = new System.Windows.Forms.RadioButton();
-			this.compCmbBox = new System.Windows.Forms.ComboBox();
-			this.compLbl = new System.Windows.Forms.Label();
 			this.inputLbl = new System.Windows.Forms.Label();
 			this.inputTxtBox = new System.Windows.Forms.TextBox();
-			this.inputGrpBox.SuspendLayout();
+			this.compLbl = new System.Windows.Forms.Label();
+			this.compCmbBox = new System.Windows.Forms.ComboBox();
 			this.SuspendLayout();
 			// 
 			// simulateBtn
@@ -54,6 +49,7 @@
 			this.simulateBtn.TabIndex = 1;
 			this.simulateBtn.Text = "Simulate";
 			this.simulateBtn.UseVisualStyleBackColor = true;
+			this.simulateBtn.Click += new System.EventHandler(this.simulateBtn_Click);
 			// 
 			// backBtn
 			// 
@@ -81,73 +77,13 @@
 			// 
 			this.dataStructCmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dataStructCmbBox.FormattingEnabled = true;
+			this.dataStructCmbBox.Items.AddRange(new object[] {
+            "Stack"});
 			this.dataStructCmbBox.Location = new System.Drawing.Point(127, 21);
 			this.dataStructCmbBox.Name = "dataStructCmbBox";
 			this.dataStructCmbBox.Size = new System.Drawing.Size(121, 21);
 			this.dataStructCmbBox.TabIndex = 4;
 			this.dataStructCmbBox.Text = "         -- Select --";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(27, 72);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(70, 19);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "Input type:";
-			// 
-			// inputGrpBox
-			// 
-			this.inputGrpBox.Controls.Add(this.strRadBtn);
-			this.inputGrpBox.Controls.Add(this.numRadBtn);
-			this.inputGrpBox.Location = new System.Drawing.Point(103, 48);
-			this.inputGrpBox.Name = "inputGrpBox";
-			this.inputGrpBox.Size = new System.Drawing.Size(145, 59);
-			this.inputGrpBox.TabIndex = 6;
-			this.inputGrpBox.TabStop = false;
-			// 
-			// strRadBtn
-			// 
-			this.strRadBtn.AutoSize = true;
-			this.strRadBtn.Location = new System.Drawing.Point(6, 36);
-			this.strRadBtn.Name = "strRadBtn";
-			this.strRadBtn.Size = new System.Drawing.Size(52, 17);
-			this.strRadBtn.TabIndex = 1;
-			this.strRadBtn.TabStop = true;
-			this.strRadBtn.Text = "String";
-			this.strRadBtn.UseVisualStyleBackColor = true;
-			// 
-			// numRadBtn
-			// 
-			this.numRadBtn.AutoSize = true;
-			this.numRadBtn.Location = new System.Drawing.Point(6, 13);
-			this.numRadBtn.Name = "numRadBtn";
-			this.numRadBtn.Size = new System.Drawing.Size(72, 17);
-			this.numRadBtn.TabIndex = 0;
-			this.numRadBtn.TabStop = true;
-			this.numRadBtn.Text = "Numerical";
-			this.numRadBtn.UseVisualStyleBackColor = true;
-			// 
-			// compCmbBox
-			// 
-			this.compCmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.compCmbBox.FormattingEnabled = true;
-			this.compCmbBox.Location = new System.Drawing.Point(128, 129);
-			this.compCmbBox.Name = "compCmbBox";
-			this.compCmbBox.Size = new System.Drawing.Size(121, 21);
-			this.compCmbBox.TabIndex = 8;
-			this.compCmbBox.Text = "         -- Select --";
-			// 
-			// compLbl
-			// 
-			this.compLbl.AutoSize = true;
-			this.compLbl.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.compLbl.Location = new System.Drawing.Point(27, 129);
-			this.compLbl.Name = "compLbl";
-			this.compLbl.Size = new System.Drawing.Size(95, 19);
-			this.compLbl.TabIndex = 7;
-			this.compLbl.Text = "Data structure:";
 			// 
 			// inputLbl
 			// 
@@ -155,9 +91,9 @@
 			this.inputLbl.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.inputLbl.Location = new System.Drawing.Point(27, 175);
 			this.inputLbl.Name = "inputLbl";
-			this.inputLbl.Size = new System.Drawing.Size(75, 19);
+			this.inputLbl.Size = new System.Drawing.Size(84, 19);
 			this.inputLbl.TabIndex = 9;
-			this.inputLbl.Text = "Initial input:";
+			this.inputLbl.Text = "Integer input:";
 			// 
 			// inputTxtBox
 			// 
@@ -165,6 +101,30 @@
 			this.inputTxtBox.Name = "inputTxtBox";
 			this.inputTxtBox.Size = new System.Drawing.Size(120, 20);
 			this.inputTxtBox.TabIndex = 10;
+			this.inputTxtBox.Text = "Seperate with Spaces";
+			this.inputTxtBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.inputTxtBox.Enter += new System.EventHandler(this.inputTxtBox_Enter);
+			this.inputTxtBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.inputTxtBox_KeyPress);
+			// 
+			// compLbl
+			// 
+			this.compLbl.AutoSize = true;
+			this.compLbl.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.compLbl.Location = new System.Drawing.Point(27, 96);
+			this.compLbl.Name = "compLbl";
+			this.compLbl.Size = new System.Drawing.Size(77, 19);
+			this.compLbl.TabIndex = 7;
+			this.compLbl.Text = "Comparison:";
+			// 
+			// compCmbBox
+			// 
+			this.compCmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.compCmbBox.FormattingEnabled = true;
+			this.compCmbBox.Location = new System.Drawing.Point(127, 96);
+			this.compCmbBox.Name = "compCmbBox";
+			this.compCmbBox.Size = new System.Drawing.Size(121, 21);
+			this.compCmbBox.TabIndex = 8;
+			this.compCmbBox.Text = "         -- Select --";
 			// 
 			// ConfigurationFrm
 			// 
@@ -175,8 +135,6 @@
 			this.Controls.Add(this.inputLbl);
 			this.Controls.Add(this.compCmbBox);
 			this.Controls.Add(this.compLbl);
-			this.Controls.Add(this.inputGrpBox);
-			this.Controls.Add(this.label2);
 			this.Controls.Add(this.dataStructCmbBox);
 			this.Controls.Add(this.dataStructLbl);
 			this.Controls.Add(this.backBtn);
@@ -184,8 +142,6 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "ConfigurationFrm";
 			this.Text = "Data Structure Configuration";
-			this.inputGrpBox.ResumeLayout(false);
-			this.inputGrpBox.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -197,13 +153,9 @@
 		private System.Windows.Forms.Button backBtn;
 		private System.Windows.Forms.Label dataStructLbl;
 		private System.Windows.Forms.ComboBox dataStructCmbBox;
-		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.GroupBox inputGrpBox;
-		private System.Windows.Forms.RadioButton strRadBtn;
-		private System.Windows.Forms.RadioButton numRadBtn;
-		private System.Windows.Forms.ComboBox compCmbBox;
-		private System.Windows.Forms.Label compLbl;
 		private System.Windows.Forms.Label inputLbl;
 		private System.Windows.Forms.TextBox inputTxtBox;
+		private System.Windows.Forms.Label compLbl;
+		private System.Windows.Forms.ComboBox compCmbBox;
 	}
 }

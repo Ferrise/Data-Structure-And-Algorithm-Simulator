@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StackFrm));
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.stackSimPicBox = new System.Windows.Forms.PictureBox();
 			this.pushBtn = new System.Windows.Forms.Button();
 			this.popBtn = new System.Windows.Forms.Button();
 			this.pushOLbl = new System.Windows.Forms.Label();
@@ -39,17 +39,17 @@
 			this.stackTitleLbl = new System.Windows.Forms.Label();
 			this.mainMenuBtn = new System.Windows.Forms.Button();
 			this.exitBtn = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.stackSimPicBox)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// pictureBox1
+			// stackSimPicBox
 			// 
-			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.pictureBox1.Location = new System.Drawing.Point(51, 56);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(590, 367);
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.stackSimPicBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.stackSimPicBox.Location = new System.Drawing.Point(51, 56);
+			this.stackSimPicBox.Name = "stackSimPicBox";
+			this.stackSimPicBox.Size = new System.Drawing.Size(590, 367);
+			this.stackSimPicBox.TabIndex = 0;
+			this.stackSimPicBox.TabStop = false;
 			// 
 			// pushBtn
 			// 
@@ -162,11 +162,12 @@
 			this.Controls.Add(this.pushOLbl);
 			this.Controls.Add(this.popBtn);
 			this.Controls.Add(this.pushBtn);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.stackSimPicBox);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "StackFrm";
 			this.Text = "Stack Simulator";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.Load += new System.EventHandler(this.StackFrm_Load);
+			((System.ComponentModel.ISupportInitialize)(this.stackSimPicBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -174,7 +175,7 @@
 
 		#endregion
 
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox stackSimPicBox;
 		private System.Windows.Forms.Button pushBtn;
 		private System.Windows.Forms.Button popBtn;
 		private System.Windows.Forms.Label pushOLbl;
