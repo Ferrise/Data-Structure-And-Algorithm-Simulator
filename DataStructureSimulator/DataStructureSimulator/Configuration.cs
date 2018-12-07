@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace DataStructureSimulator
 {
-	public partial class MainMenuFrm : Form
+	public partial class configurationFrm : Form
 	{
-		public MainMenuFrm()
+		public configurationFrm()
 		{
 			InitializeComponent();
-		}
-
-		// Gracefully exits the program
-		private void quitBtn_Click(object sender, EventArgs e)
-		{
-			Close();
 		}
 	}
 }
