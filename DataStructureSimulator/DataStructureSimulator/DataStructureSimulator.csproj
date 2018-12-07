@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration.cs">
+    <Compile Include="ConfigurationFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Configuration.Designer.cs">
-      <DependentUpon>Configuration.cs</DependentUpon>
+    <Compile Include="ConfigurationFrm.Designer.cs">
+      <DependentUpon>ConfigurationFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenuFrm.cs">
       <SubType>Form</SubType>
@@ -59,8 +59,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stack.cs" />
-    <EmbeddedResource Include="Configuration.resx">
-      <DependentUpon>Configuration.cs</DependentUpon>
+    <Compile Include="StackFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StackFrm.Designer.cs">
+      <DependentUpon>StackFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ConfigurationFrm.resx">
+      <DependentUpon>ConfigurationFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuFrm.resx">
       <DependentUpon>MainMenuFrm.cs</DependentUpon>
@@ -74,6 +80,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StackFrm.resx">
+      <DependentUpon>StackFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
