@@ -13,13 +13,15 @@ namespace DataStructureSimulator
 		private int height;
 		private int x;
 		private int y;
+		private int data;
 
-		public StackEntryDrawing(int width, int height, int x, int y)
+		public StackEntryDrawing(int width, int height, int x, int y, int data)
 		{
 			this.width = width;
 			this.height = height;
 			this.x = x;
 			this.y = y;
+			this.data = data;
 		}
 
 		// Draws this stack entry onto g
