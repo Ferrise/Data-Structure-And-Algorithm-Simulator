@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DataStructureSimulator
 {
-	public partial class Form1 : Form
+	public partial class MainMenuFrm : Form
 	{
-		public Form1()
+		public MainMenuFrm()
 		{
 			InitializeComponent();
 		}
