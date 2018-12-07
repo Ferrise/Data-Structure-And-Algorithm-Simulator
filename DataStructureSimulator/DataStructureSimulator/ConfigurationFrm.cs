@@ -36,7 +36,14 @@ namespace DataStructureSimulator
 		private void simulateBtn_Click(object sender, EventArgs e)
 		{
 			int dataStructure = dataStructCmbBox.SelectedIndex;
-			LinkedStack<int> inputs = new LinkedStack<int>();
+			Stack inputs = new Stack();
+
+			// Handles the case where the user did not enter the input text box
+			if (!hasBeenEntered)
+			{
+				MessageBox.Show("No input has been entered. Please enter a sequence of integers seperated by whitespace.");
+				return;
+			}
 
 			// Populates inputs by converting each digit entered into a 32-bit integer
 			// The string array produced by trimming then splitting by all whitespace is iterated over
@@ -45,7 +52,7 @@ namespace DataStructureSimulator
 				// Handles the case where one the numbers entred is too small or large
 				try
 				{
-					inputs.push(Int32.Parse(entry));
+					inputs.Push(Int32.Parse(entry));
 				}
 				catch (OverflowException ex)
 				{

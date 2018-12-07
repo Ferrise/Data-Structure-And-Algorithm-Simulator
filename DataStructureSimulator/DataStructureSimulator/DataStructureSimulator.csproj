@@ -59,6 +59,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stack.cs" />
+    <Compile Include="StackDrawing.cs" />
+    <Compile Include="StackEntryDrawing.cs" />
     <Compile Include="StackFrm.cs">
       <SubType>Form</SubType>
     </Compile>

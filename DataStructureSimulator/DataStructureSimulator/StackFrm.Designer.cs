@@ -44,6 +44,7 @@
 			// 
 			// stackSimPicBox
 			// 
+			this.stackSimPicBox.BackColor = System.Drawing.Color.White;
 			this.stackSimPicBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.stackSimPicBox.Location = new System.Drawing.Point(51, 56);
 			this.stackSimPicBox.Name = "stackSimPicBox";
@@ -167,6 +168,7 @@
 			this.Name = "StackFrm";
 			this.Text = "Stack Simulator";
 			this.Load += new System.EventHandler(this.StackFrm_Load);
+			this.Paint += new System.Windows.Forms.PaintEventHandler(this.StackFrm_Paint);
 			((System.ComponentModel.ISupportInitialize)(this.stackSimPicBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
