@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StackFrm));
-			this.stackSimPicBox = new System.Windows.Forms.PictureBox();
 			this.pushBtn = new System.Windows.Forms.Button();
 			this.popBtn = new System.Windows.Forms.Button();
 			this.pushOLbl = new System.Windows.Forms.Label();
@@ -39,19 +38,9 @@
 			this.stackTitleLbl = new System.Windows.Forms.Label();
 			this.mainMenuBtn = new System.Windows.Forms.Button();
 			this.exitBtn = new System.Windows.Forms.Button();
+			this.stackSimPicBox = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.stackSimPicBox)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// stackSimPicBox
-			// 
-			this.stackSimPicBox.BackColor = System.Drawing.Color.White;
-			this.stackSimPicBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.stackSimPicBox.Location = new System.Drawing.Point(51, 56);
-			this.stackSimPicBox.Name = "stackSimPicBox";
-			this.stackSimPicBox.Size = new System.Drawing.Size(590, 367);
-			this.stackSimPicBox.TabIndex = 0;
-			this.stackSimPicBox.TabStop = false;
-			this.stackSimPicBox.Paint += new System.Windows.Forms.PaintEventHandler(this.stackSimPicBox_Paint);
 			// 
 			// pushBtn
 			// 
@@ -63,6 +52,7 @@
 			this.pushBtn.TabIndex = 2;
 			this.pushBtn.Text = "Push";
 			this.pushBtn.UseVisualStyleBackColor = true;
+			this.pushBtn.Click += new System.EventHandler(this.pushBtn_Click);
 			// 
 			// popBtn
 			// 
@@ -74,6 +64,7 @@
 			this.popBtn.TabIndex = 3;
 			this.popBtn.Text = "Pop";
 			this.popBtn.UseVisualStyleBackColor = true;
+			this.popBtn.Click += new System.EventHandler(this.popBtn_Click);
 			// 
 			// pushOLbl
 			// 
@@ -150,6 +141,18 @@
 			this.exitBtn.Text = "Exit";
 			this.exitBtn.UseVisualStyleBackColor = true;
 			// 
+			// stackSimPicBox
+			// 
+			this.stackSimPicBox.BackColor = System.Drawing.Color.White;
+			this.stackSimPicBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.stackSimPicBox.Location = new System.Drawing.Point(51, 56);
+			this.stackSimPicBox.Name = "stackSimPicBox";
+			this.stackSimPicBox.Size = new System.Drawing.Size(590, 367);
+			this.stackSimPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+			this.stackSimPicBox.TabIndex = 0;
+			this.stackSimPicBox.TabStop = false;
+			this.stackSimPicBox.Paint += new System.Windows.Forms.PaintEventHandler(this.stackSimPicBox_Paint);
+			// 
 			// StackFrm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,6 +160,7 @@
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.CancelButton = this.exitBtn;
 			this.ClientSize = new System.Drawing.Size(723, 518);
+			this.Controls.Add(this.stackSimPicBox);
 			this.Controls.Add(this.exitBtn);
 			this.Controls.Add(this.mainMenuBtn);
 			this.Controls.Add(this.stackTitleLbl);
@@ -166,11 +170,9 @@
 			this.Controls.Add(this.pushOLbl);
 			this.Controls.Add(this.popBtn);
 			this.Controls.Add(this.pushBtn);
-			this.Controls.Add(this.stackSimPicBox);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "StackFrm";
 			this.Text = "Stack Simulator";
-			this.Load += new System.EventHandler(this.StackFrm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.stackSimPicBox)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -178,8 +180,6 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.PictureBox stackSimPicBox;
 		private System.Windows.Forms.Button pushBtn;
 		private System.Windows.Forms.Button popBtn;
 		private System.Windows.Forms.Label pushOLbl;
@@ -189,5 +189,6 @@
 		private System.Windows.Forms.Label stackTitleLbl;
 		private System.Windows.Forms.Button mainMenuBtn;
 		private System.Windows.Forms.Button exitBtn;
+		private System.Windows.Forms.PictureBox stackSimPicBox;
 	}
 }

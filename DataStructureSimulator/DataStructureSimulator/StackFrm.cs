@@ -26,16 +26,30 @@ namespace DataStructureSimulator
 			this.stackImage = new StackDrawing(stackSimPicBox.Width / 2, stackSimPicBox.Height, 50, 50, this.inputs);
 		}
 
-		private void StackFrm_Load(object sender, EventArgs e)
-		{
-		}
 
+		// Draws the stack onto the picture box
 		private void stackSimPicBox_Paint(object sender, PaintEventArgs e)
 		{
 			Graphics g = e.Graphics;
-			g.Clear(Color.White);
 			Pen pen = new Pen(Color.Red, 5);
 			this.stackImage.draw(g, pen);
+		}
+
+		private void pushBtn_Click(object sender, EventArgs e)
+		{
+			
+		}
+
+		// Removes the top element of the stack from the graphic when clicked
+		private void popBtn_Click(object sender, EventArgs e)
+		{
+			if (stackImage.isEmpty())
+			{
+				return;
+			}
+
+			this.stackImage.pop();
+			stackSimPicBox.Refresh();
 		}
 	}
 }

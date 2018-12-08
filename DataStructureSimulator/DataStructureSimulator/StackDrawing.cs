@@ -43,12 +43,26 @@ namespace DataStructureSimulator
 			this.stackEntries.push(inputStackEntry);
 		}
 
+		// Removes the top element of this
+		public void pop()
+		{
+			stackEntries.pop();
+		}
+
+		// Returns whether this is empty
+		public Boolean isEmpty()
+		{
+			return this.stackEntries.isEmpty();
+		}
+
 		// Draws the stack represented by this StackDrawing onto g
 		public void draw(Graphics g, Pen pen)
 		{
-			while (stackEntries.Count > 0)
+			LinkedList<StackEntryDrawing>.Enumerator iter = this.stackEntries.GetEnumerator();
+			
+			while (iter.MoveNext())
 			{
-				this.stackEntries.pop().draw(g, pen);
+				iter.Current.draw(g, pen);
 			}
 		}
 	}
