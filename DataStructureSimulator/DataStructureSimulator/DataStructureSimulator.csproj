@@ -50,6 +50,12 @@
     <Compile Include="ConfigurationFrm.Designer.cs">
       <DependentUpon>ConfigurationFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputFrm.Designer.cs">
+      <DependentUpon>InputFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainMenuFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     </Compile>
     <EmbeddedResource Include="ConfigurationFrm.resx">
       <DependentUpon>ConfigurationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputFrm.resx">
+      <DependentUpon>InputFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuFrm.resx">
       <DependentUpon>MainMenuFrm.cs</DependentUpon>

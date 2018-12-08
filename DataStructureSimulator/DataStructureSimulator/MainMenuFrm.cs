@@ -28,7 +28,6 @@ namespace DataStructureSimulator
 		{
 			ConfigurationFrm configurationForm = new ConfigurationFrm();
 			configurationForm.Show();
-			this.Hide();
 		}
 	}
 }

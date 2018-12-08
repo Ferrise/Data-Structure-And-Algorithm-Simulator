@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace DataStructureSimulator
 {
-	class StackDrawing
+	public class StackDrawing
 	{
 		private int x;
 		private int y;
 		private int width;
 		private int height;
 		private LinkedStack<StackEntryDrawing> stackEntries;
+	
 
 		public StackDrawing(int x, int startY, int width, int height, LinkedStack<int> inputs)
 		{
@@ -41,12 +42,14 @@ namespace DataStructureSimulator
 		{
 			StackEntryDrawing inputStackEntry = new StackEntryDrawing(width, height, x, y, input);
 			this.stackEntries.push(inputStackEntry);
+			y -= height;
 		}
 
 		// Removes the top element of this
 		public void pop()
 		{
 			stackEntries.pop();
+			y += height;
 		}
 
 		// Returns whether this is empty

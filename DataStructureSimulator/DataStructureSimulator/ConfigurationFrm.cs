@@ -29,7 +29,7 @@ namespace DataStructureSimulator
 		{
 			MainMenuFrm mainMenuForm = new MainMenuFrm();
 			mainMenuForm.Show();
-			this.Hide();
+			
 		}
 
 		// Produces a simulation form based on the selected configurations
@@ -68,7 +68,6 @@ namespace DataStructureSimulator
 				case 0:
 					StackFrm stackForm = new StackFrm(inputs);
 					stackForm.Show();
-					this.Hide();
 					break;
 			}
 		}

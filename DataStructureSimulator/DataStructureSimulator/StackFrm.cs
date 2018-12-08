@@ -35,9 +35,11 @@ namespace DataStructureSimulator
 			this.stackImage.draw(g, pen);
 		}
 
+		// Opens up a form that will prompt the user to enter the integer to be pushed and push that integer to the stack
 		private void pushBtn_Click(object sender, EventArgs e)
 		{
-			
+			inputFrm inputForm = new inputFrm(this.stackImage, stackSimPicBox);
+			inputForm.Show();
 		}
 
 		// Removes the top element of the stack from the graphic when clicked
